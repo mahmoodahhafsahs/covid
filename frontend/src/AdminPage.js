@@ -19,7 +19,7 @@ function AdminPage() {
     const handleSubmit = (event) => {
         event.preventDefault();
 
-        axios.post('http://localhost:8081/addVaccinationCenter', vaccinationCenterDetails)
+        axios.post('https://covid-4.onrender.com/addVaccinationCenter', vaccinationCenterDetails)
             .then((response) => {
                 console.log(response.data);
                 setVaccinationCenters((prevCenters) => [...prevCenters, response.data]);
@@ -36,7 +36,7 @@ function AdminPage() {
     };
 
     const handleRemove = (centerId) => {
-        axios.post('http://localhost:8081/removeVaccinationCenter', { id: centerId })
+        axios.post('https://covid-4.onrender.com/removeVaccinationCenter', { id: centerId })
             .then((response) => {
                 if (response.data.success) {
                     setVaccinationCenters((prevCenters) => prevCenters.filter((center) => center.id !== centerId));
@@ -50,7 +50,7 @@ function AdminPage() {
     };
 
     const handleBook = (centerId) => {
-        axios.post('http://localhost:8081/bookVaccinationCenter', { id: centerId })
+        axios.post('https://covid-4.onrender.com/bookVaccinationCenter', { id: centerId })
             .then((response) => {
                 if (response.data.success) {
                     // Handle success, e.g., show a success message
@@ -64,7 +64,7 @@ function AdminPage() {
     };
 
     useEffect(() => {
-        axios.get('http://localhost:8081/getVaccinationCenters')
+        axios.get('https://covid-4.onrender.com/getVaccinationCenters')
             .then((response) => {
                 setVaccinationCenters(response.data);
             })

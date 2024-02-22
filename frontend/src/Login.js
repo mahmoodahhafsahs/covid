@@ -27,7 +27,7 @@ function Login({ isAdmin }) {
       navigate('/admin-page');
     } else if (err.email === '' && err.password === '') {
       axios
-        .post('http://localhost:8081/login', values)
+        .post('https://covid-4.onrender.com/login', values)
         .then((res) => {
           if (res.data === 'Success') {
             navigate('/home');
