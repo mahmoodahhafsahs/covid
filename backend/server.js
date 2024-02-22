@@ -12,10 +12,10 @@ app.use(cors());
 app.use(express.json());
 
 const db = mysql.createConnection({
-    host: "localhost",
-    user: "root",
-    password: "",
-    database: "pop"
+    host: "belenetot6f6gly4rr5p-mysql.services.clever-cloud.com",
+    user: "uve1x823cb1et59f",
+    password: "q9FBCxXAuf2PJYGxiZaR",
+    database: "belenetot6f6gly4rr5p"
 });
 
 // WebSocket setup
